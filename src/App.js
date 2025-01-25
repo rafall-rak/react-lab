@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="container">
             <h1>My favourite movies to watch</h1>
-            <MoviesList movies={movies} />
+            <MoviesList movies={movies} onDeleteMovie={it => setMovies(movies.filter(movie => movie.title !== it.title))} />
             <MovieForm onMovieSubmit={(movie) => setMovies([...movies, movie])} buttonLabel="Add a movie" />
         </div>
     );
